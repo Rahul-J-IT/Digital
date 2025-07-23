@@ -1,0 +1,214 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Base Styles */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease-in-out;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 24px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+}
+
+.logo svg {
+  margin-right: 8px;
+}
+
+/* Menu Styles */
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu li {
+  margin-left: 24px;
+  position: relative;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.menu li a:hover {
+  color: #006EFF;
+}
+
+.button {
+  padding: 8px 16px;
+  background-color: #006EFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0054cc;
+}
+
+/* Drawer Styles */
+.drawer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: scaleY(0.95);
+  transform-origin: top;
+  transition: max-height 0.5s ease, opacity 0.4s ease, transform 0.4s ease;
+  z-index: 999;
+}
+
+/* Drawer open state */
+.drawer.open {
+  max-height: 600px;
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/* Prevent fadeIn animation glitch during close */
+.drawer:not(.open) .drawer-content {
+  animation: none;
+}
+
+/* Drawer Content Styling */
+.drawer-content {
+  padding: 32px 48px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.drawer-content p {
+  font-size: 17px;
+  font-weight: 400;
+  color: #333;
+  flex: 1 1 30%;
+  line-height: 1.7;
+}
+
+/* Keyframe animation for drawer content */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Mobile Menu */
+.menu-btn {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-icon .navicon {
+  background: #000;
+  display: block;
+  width: 25px;
+  height: 3px;
+  position: relative;
+}
+
+.menu-icon .navicon::before,
+.menu-icon .navicon::after {
+  content: '';
+  position: absolute;
+  background: #000;
+  width: 25px;
+  height: 3px;
+  transition: all 0.3s ease;
+}
+
+.menu-icon .navicon::before {
+  top: -8px;
+}
+
+.menu-icon .navicon::after {
+  top: 8px;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .menu li {
+    margin: 12px 0;
+    text-align: center;
+  }
+
+  .menu-btn:checked ~ .menu {
+    max-height: 300px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* Page Content */
+.page-content {
+  margin-top: 100px;
+  padding: 20px;
+}
+
+.dropdown-icon {
+  font-size: 12px;
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+/* Optional: rotate on hover */
+.menu li:hover .dropdown-icon {
+  transform: rotate(180deg);
+}
+
