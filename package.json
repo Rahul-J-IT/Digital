@@ -18,6 +18,7 @@
     "express": "^4.21.2",
     "express-fileupload": "^1.5.1",
     "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.525.0",
     "mongoose": "^8.8.4",
     "paytmchecksum": "^1.5.1",
     "proc-log-cmd": "^1.0.0",
