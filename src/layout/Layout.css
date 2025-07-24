@@ -48,3 +48,24 @@
 button:hover {
 	background-color: var(--darkBlue);
 }
+
+body:has(.scroll-area:has(:not(:first-child))) .menu-bar {
+  height: 40px;
+  background: black;
+  transition: all 0.3s ease;
+}
+
+.menu-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: transparent;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.scroll-area {
+  padding-top: 60px;
+}

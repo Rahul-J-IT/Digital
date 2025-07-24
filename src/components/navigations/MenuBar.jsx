@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, DoorClosed, X } from "lucide-react";
 import "./MenuBar.css";
 
 const hoverData = {
@@ -150,7 +150,7 @@ const MenuBar = () => {
         ref={headerRef}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="nav-wrapper">
+        <div className={`nav-wrapper ${mobileMenuOpen ? 'active' : ''}`}>
           <a className="logo" href="/">
             <img src="/image.png" alt="" />
              
@@ -220,20 +220,23 @@ const MenuBar = () => {
       <div className={`mobile-menu-overlay ${mobileMenuOpen ? 'active' : ''}`}>
         <div className="mobile-menu-header">
           <a className="logo" href="/" onClick={closeMobileMenu}>
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#4A90E2" />
-              <path d="M2 17L12 22L22 17" stroke="#4A90E2" strokeWidth="2" />
-              <path d="M2 12L12 17L22 12" stroke="#4A90E2" strokeWidth="2" />
-            </svg>
-            PROPY
+            
+            <img src="/image.png" alt="" />
+             
+            Build works
           </a>
-          <button 
+          {
+            mobileMenuOpen?
+          (<button 
+            className={`menu-btn active`}
+            onClick={closeMobileMenu}
+          >
+            <div className="closeicon">
+              <X size={32} color="white"/>
+              
+            </div>
+          </button>):(
+            <button 
             className={`menu-btn active`}
             onClick={closeMobileMenu}
           >
@@ -242,7 +245,8 @@ const MenuBar = () => {
               <span></span>
               <span></span>
             </div>
-          </button>
+          </button>)
+}
         </div>
 
         <div className="mobile-menu-content">
@@ -281,12 +285,7 @@ const MenuBar = () => {
           <a href="/title-escrow" className="mobile-simple-link" onClick={closeMobileMenu}>
             TITLE & ESCROW
           </a>
-          <a href="/open-escrow" className="mobile-simple-link" onClick={closeMobileMenu}>
-            OPEN ESCROW
-          </a>
-          <a href="/sign-in" className="mobile-simple-link" onClick={closeMobileMenu}>
-            SIGN IN
-          </a>
+          
         </div>
       </div>
     </div>

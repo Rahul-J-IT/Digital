@@ -7,8 +7,9 @@ import './Layout.css'
 const Layout = (props) => {
     return(
         <React.Fragment>
-            <MenuBar />
-
+            <div className="menu-bar">
+          <MenuBar />
+</div>
             <main className="main-content">
                 {props.children}
             </main>
