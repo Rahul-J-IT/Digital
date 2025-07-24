@@ -236,8 +236,7 @@ body {
 .hamburger {
   display: flex;
   flex-direction: column;
-  width: 24px;
-  height: 18px;
+  
   justify-content: space-between;
 }
 

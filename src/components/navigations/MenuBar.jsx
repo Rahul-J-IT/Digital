@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { ChevronDown, DoorClosed, X } from "lucide-react";
+import { AlignJustify, ChevronDown, DoorClosed, X } from "lucide-react";
 import "./MenuBar.css";
 
 const hoverData = {
@@ -180,9 +180,7 @@ const MenuBar = () => {
             onClick={toggleMobileMenu}
           >
             <div className="hamburger">
-              <span></span>
-              <span></span>
-              <span></span>
+              <AlignJustify size={32} color="white"/>
             </div>
           </button>
         </div>
