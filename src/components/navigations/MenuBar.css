@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family:'Space Grotesk Variable';
   background-color: #f9f9f9;
 }
 
@@ -19,55 +19,64 @@ body {
 /* Header */
 .header {
   background-color: #000000;
-  padding: 20px 40px;
   width: 100%;
-  height: 64px;
   position: relative;
   z-index: 1001;
 }
 
 .nav-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   max-width: 1280px;
   margin: 0 auto;
-  height: 100%;
 }
 
 .logo {
+  /* height: 40px; */
+  padding: 1px 0px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-decoration: none;
-  color: #4A90E2;
+  text-transform: uppercase;
+  color: white;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 30px;
   letter-spacing: 0.5px;
 }
+.logo img {
+  width: 45px;   /* You can change this value */
+  height: auto;  /* Keeps the aspect ratio */
+}
+
 
 /* Menu */
 .menu {
   display: flex;
+  /* font-family: "Space Grotesk Variable"; */
   list-style: none;
-  gap: 28px;
+  gap: 48px;
   align-items: center;
-  margin: 0;
-  padding: 0;
-  height: 100%;
+  margin: -5px 0px -5px 0px;
 }
 
-.menu-item {
+
+.menu-item-b:hover,.menu-item-b a:hover {
+  /* font-family: "Space Grotesk Variable"; */
+  color:white;
+  /* line-height: 19.5px; */
   position: relative;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   align-items: center;
 }
+.menu-item-b, .menu-item-b a{
+     color:#757575;
 
-.menu-item a {
-  color: #4A90E2;
+     /* font-family: "Space Grotesk Variable"; */
   text-decoration: none;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 1px;
   display: flex;
@@ -75,19 +84,14 @@ body {
   gap: 6px;
   text-transform: uppercase;
   transition: color 0.3s ease;
-  padding: 0 10px;
+  padding: 16px 0px 16px 0px;
 }
-.menu-item-b {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.menu-item-b a {
-  color: #4A90E2;
+.menu-item a{
+  color:#38A6FB; /* darker blue for better contrast */
+  /* line-height: 19.5px; */
+  /* font-family: "Space Grotesk Variable"; */
   text-decoration: none;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 1px;
   display: flex;
@@ -95,8 +99,9 @@ body {
   gap: 6px;
   text-transform: uppercase;
   transition: color 0.3s ease;
-  padding: 0 10px;
+  padding: 16px 0px 16px 0px;
 }
+
 .menu-item:hover > a,
 .menu-item.active > a {
   color: #ffffff;
@@ -152,21 +157,13 @@ body {
   opacity: 1;
 }
 
-.full-width-drawer.active .drawer-section:nth-child(1) {
-  transition-delay: 0.1s;
-}
-
-.full-width-drawer.active .drawer-section:nth-child(2) {
-  transition-delay: 0.2s;
-}
-
-.full-width-drawer.active .drawer-section:nth-child(3) {
-  transition-delay: 0.3s;
-}
+.full-width-drawer.active .drawer-section:nth-child(1) { transition-delay: 0.1s; }
+.full-width-drawer.active .drawer-section:nth-child(2) { transition-delay: 0.2s; }
+.full-width-drawer.active .drawer-section:nth-child(3) { transition-delay: 0.3s; }
 
 /* Drawer Items */
 .section-title {
-  color: #4A90E2;
+  color: #38A6FB;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
@@ -187,23 +184,19 @@ body {
 }
 
 .section-item a {
-  color: #5d5a5a;
+  color: #333333; /* improved from #5d5a5a */
   text-decoration: none;
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
   letter-spacing: normal;
   display: block;
-  
 }
 
 .section-item a:hover {
   color: #f0eded;
   font-size: 17px;
-  line-height: 24px;
   font-weight: 300;
-
-  
 }
 
 /* Backdrop */
@@ -230,7 +223,7 @@ body {
   display: none;
   background: none;
   border: none;
-  color: #4A90E2;
+  color: #2A6CBD;
   cursor: pointer;
   padding: 5px;
   z-index: 1002;
@@ -248,7 +241,7 @@ body {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #4A90E2;
+  background-color: #2A6CBD;
   transition: all 0.3s ease;
 }
 
@@ -304,7 +297,7 @@ body {
 }
 
 .mobile-menu-link {
-  color: #4A90E2;
+  color: #2A6CBD;
   text-decoration: none;
   font-size: 18px;
   font-weight: 600;
@@ -333,7 +326,7 @@ body {
 }
 
 .mobile-submenu-title {
-  color: #4A90E2;
+  color: #2A6CBD;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
@@ -354,9 +347,9 @@ body {
 }
 
 .mobile-submenu-item a {
-  color: #6d6767;
+  color: #333333; /* improved from #6d6767 */
   text-decoration: none;
-  font-family: "Roboto Mono", "Space Grotesk", "Roboto Serif", Helvetica, Arial, sans-serif;
+  font-family: "Space Grotesk Variable";
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
@@ -368,7 +361,7 @@ body {
 
 .mobile-submenu-item a:hover {
   color: #808080;
-  font-family: "Roboto Mono Variable";
+  font-family: "Space Grotesk Variable Variable";
   font-size: 15px;
   line-height: 22.5px;
   font-weight: 300;
@@ -377,7 +370,7 @@ body {
 }
 
 .mobile-simple-link {
-  color: #4A90E2;
+  color: #2A6CBD;
   text-decoration: none;
   font-size: 18px;
   font-weight: 600;
